@@ -19,7 +19,7 @@ public class CategoryController {
         this.service = service;
     }
 
-    @PostMapping
+    @GetMapping
     public ResponseEntity<Category> insert(@RequestBody CategoryDTO categoryData){
       Category newCategory =  this.service.insert(categoryData);
       return ResponseEntity.ok().body(newCategory);
@@ -38,7 +38,7 @@ public class CategoryController {
         return ResponseEntity.ok().body(updatedCategory);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Category> delete(@PathVariable String id){
         this.service.delete(id);
         return ResponseEntity.noContent().build();
