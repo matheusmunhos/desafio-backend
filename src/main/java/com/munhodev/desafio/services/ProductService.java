@@ -59,6 +59,10 @@ public class ProductService {
         return this.repository.findAll();
     }
 
+    public Product getById(String id){
+        return this.repository.findById(id).orElseThrow(ProductNotFoundException::new);
+    }
+
 
 
 

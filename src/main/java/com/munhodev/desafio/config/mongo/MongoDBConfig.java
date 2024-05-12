@@ -14,8 +14,6 @@ public class MongoDBConfig {
         return new SimpleMongoClientDatabaseFactory("mongodb://localhost:27017/product-catalog");
     }
 
-
-
     @Bean
     public MongoTemplate mongoTemplate(){
         return new MongoTemplate(mongoConfigure());
